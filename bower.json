@@ -25,6 +25,6 @@
     }
   ],
   "dependencies": {
-    "jss": "0.x"
+    "jsstyles": "0.x"
   }
 }
