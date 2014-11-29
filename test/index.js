@@ -10,7 +10,7 @@ QUnit.module('Vendor prefixes plugin', {
 })
 
 test('known property', function () {
-    var ss = new jss.Stylesheet({
+    var ss = new jss.StyleSheet({
         a: {animation: 'yyy'}
     })
     var prefixedProp = cssVendor.prefix.css + 'animation'
@@ -19,7 +19,7 @@ test('known property', function () {
 })
 
 test('unknown property', function () {
-    var ss = new jss.Stylesheet({
+    var ss = new jss.StyleSheet({
         a: {xxx: 'yyy'}
     })
     equal(ss.toString(), 'a {\n  xxx: yyy;\n}')
