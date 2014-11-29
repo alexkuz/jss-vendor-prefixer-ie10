@@ -19,8 +19,8 @@ Vendor prefixes are handled automatically using a smart check which results are 
 
 ```javascript
 var jss = require('jss')
-var extend = require('jss-extend')
-jss.use(extend)
+var vendorPrefixer = require('jss-vendor-prefixer')
+jss.use(vendorPrefixer)
 ```
 
 ## Run tests
@@ -32,7 +32,7 @@ open test/local.html
 ```
 ### From github
 
-[Tests](https://jsstyles.github.com/jss-extend/test)
+[Tests](https://jsstyles.github.com/jss-vendor-prefixer/test)
 
 ## License
 
