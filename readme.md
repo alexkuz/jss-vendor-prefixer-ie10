@@ -1,6 +1,6 @@
 ## Vendor prefixer plugin for JSS
 
-Vendor prefixes are handled automatically using a smart check which results are cached. [See example.](http://jsstyles.github.io/jss-vendor-prefixer/examples/property/index.html)
+This vendor prefixer knows which properties are supported in the current runtime and adds only whats required. The best thing is - you don't need to download all of them. Also it is very fast, all checks are cached. [See example.](http://jsstyles.github.io/jss-vendor-prefixer/examples/property/index.html)
 
 ```javascript
 {
