@@ -1,7 +1,7 @@
 {
   "name": "jss-vendor-prefixer",
   "description": "Vendor prefixer for jss",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": {
     "name": "Oleg Slobodskoi",
     "email": "oleg008@gmail.com"
@@ -31,9 +31,9 @@
     "browserify": "6.0.3",
     "qunitjs": "1.15.0",
     "xpkg": "0.2.x",
-    "jss": "0.x"
+    "jss": "^1.0.0"
   },
   "peerDependencies": {
-    "jss": "0.x"
+    "jss": "^1.0.0"
   }
 }
