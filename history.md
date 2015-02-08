@@ -1,3 +1,7 @@
+## 0.2.0 / 2015-02-08
+
+- add prefixed values support
+
 ## 0.1.3 / 2014-01-31
 
 - update jss to 1.0

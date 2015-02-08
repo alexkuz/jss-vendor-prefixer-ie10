@@ -1,7 +1,7 @@
 {
     name: 'jss-vendor-prefixer',
     description: 'Vendor prefixer for jss',
-    version: '0.1.3',
+    version: '0.2.0',
     author: {
         name: 'Oleg Slobodskoi',
         email: 'oleg008@gmail.com'
@@ -20,11 +20,11 @@
         }
     ],
     dependencies: {
-        'css-vendor': '0.1.x'
+        'css-vendor': '^0.2.0'
     },
     overlay: {
         bower: {
-            dependencies: {
+            devDependencies: {
                 jsstyles: '^1.0.0'
             }
         },
