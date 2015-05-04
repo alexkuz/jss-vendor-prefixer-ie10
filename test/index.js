@@ -18,6 +18,15 @@ test('prefixed property', function () {
     equal(ss.toString(), 'a {\n  ' + prefixedProp + ': yyy;\n}')
 })
 
+test('@keyframes', function () {
+    var ss = new jss.StyleSheet({
+        '@keyframes a': {}
+    }, {named: false})
+    var prefixedKeyframes = '@' + cssVendor.prefix.css + 'keyframes'
+
+    equal(ss.toString(), prefixedKeyframes + ' a {\n}')
+})
+
 test('unknown property', function () {
     var ss = new jss.StyleSheet({
         a: {xxx: 'yyy'}
