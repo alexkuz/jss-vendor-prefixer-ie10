@@ -1,7 +1,7 @@
 {
   "name": "jss-vendor-prefixer",
   "description": "Vendor prefixer for jss",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "author": {
     "name": "Oleg Slobodskoi",
     "email": "oleg008@gmail.com"
@@ -28,6 +28,6 @@
     "css-vendor": "^0.2.0"
   },
   "devDependencies": {
-    "jsstyles": "^1.0.0"
+    "jsstyles": "^2.1.0"
   }
 }
