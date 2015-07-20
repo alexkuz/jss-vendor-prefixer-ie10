@@ -10,7 +10,7 @@ QUnit.module('Vendor prefixes plugin', {
 })
 
 test('prefixed property', function () {
-    var ss = new jss.StyleSheet({
+    var ss = jss.createStyleSheet({
         a: {animation: 'yyy'}
     }, {named: false})
     var prefixedProp = cssVendor.prefix.css + 'animation'
@@ -19,7 +19,7 @@ test('prefixed property', function () {
 })
 
 test('@keyframes', function () {
-    var ss = new jss.StyleSheet({
+    var ss = jss.createStyleSheet({
         '@keyframes a': {}
     }, {named: false})
     var prefixedKeyframes = '@' + cssVendor.prefix.css + 'keyframes'
@@ -28,14 +28,14 @@ test('@keyframes', function () {
 })
 
 test('unknown property', function () {
-    var ss = new jss.StyleSheet({
+    var ss = jss.createStyleSheet({
         a: {xxx: 'yyy'}
     }, {named: false})
     equal(ss.toString(), 'a {\n  xxx: yyy;\n}')
 })
 
 test('prefixed value', function () {
-    var ss = new jss.StyleSheet({
+    var ss = jss.createStyleSheet({
         a: {display: 'flex'}
     }, {named: false})
     var supportedValue = cssVendor.supportedValue('display', 'flex')
