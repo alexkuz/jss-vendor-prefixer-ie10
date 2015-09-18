@@ -1,7 +1,7 @@
 {
     name: 'jss-vendor-prefixer',
-    description: 'Vendor prefixer for jss',
-    version: '0.2.2',
+    description: 'JSS plugin that handles vendor prefixes on the browser',
+    version: '0.3.0',
     author: {
         name: 'Oleg Slobodskoi',
         email: 'oleg008@gmail.com'
@@ -13,30 +13,46 @@
     keywords: ['jss', 'plugin', 'vendor', 'prefixer'],
     engines: {},
     scripts: {},
-    licenses: [
-        {
-           type: 'MIT',
-           url: 'http://www.opensource.org/licenses/mit-license.php'
-        }
-    ],
+    license: 'MIT',
     dependencies: {
         'css-vendor': '^0.2.0'
     },
     overlay: {
         bower: {
+            main: 'dist/jss-vendor-prefixer.js',
             devDependencies: {
-                jsstyles: '^2.1.0'
+                jsstyles: '^2.3.0'
             }
         },
         npm: {
+            main: './lib/index.js',
             devDependencies: {
-                browserify: '6.0.3',
                 qunitjs: '1.15.0',
                 xpkg: '0.2.x',
-                jss: '^2.1.0'
+                rimraf: '^2.4.3',
+                jss: '^2.3.0',
+                eslint: '^0.24.1',
+                'eslint-config-airbnb': '^0.0.6',
+                'eslint-config-jss': '^0.1.0',
+                'eslint-plugin-react': '^2.7.0',
+                babel: '^5.6.14',
+                'babel-core': '^5.6.20',
+                'babel-eslint': '^3.1.23',
+                'babel-loader': '^5.3.1',
+                webpack: '^1.11.0'
             },
             peerDependencies: {
-                jss: '^2.1.0'
+                jss: '^2.3.0'
+            },
+            scripts: {
+                all: 'xpkg . && npm run lint && npm run test && npm run build',
+                build: 'npm run clean && npm run build:lib && npm run build:max && npm run build:min',
+                clean: 'rimraf ./lib/*',
+                'build:lib': 'babel src --out-dir lib',
+                'build:max': 'NODE_ENV=development webpack src/index.js dist/jss-vendor-prefixer.js',
+                'build:min': 'NODE_ENV=production webpack src/index.js dist/jss-vendor-prefixer.min.js',
+                lint: 'eslint ./src',
+                prepublish: 'npm run all && git push --tags'
             }
         }
     }
