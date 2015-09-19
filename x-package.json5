@@ -42,7 +42,7 @@
                 webpack: '^1.11.0'
             },
             peerDependencies: {
-                jss: '^2.3.0'
+                jss: '^2.3.2'
             },
             scripts: {
                 all: 'xpkg . && npm run lint && npm run test && npm run build',
