@@ -30,7 +30,7 @@
                 qunitjs: '1.15.0',
                 xpkg: '0.2.x',
                 rimraf: '^2.4.3',
-                jss: '^2.3.0',
+                jss: '^2.3.2',
                 eslint: '^0.24.1',
                 'eslint-config-airbnb': '^0.0.6',
                 'eslint-config-jss': '^0.1.0',
