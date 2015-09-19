@@ -24,6 +24,6 @@
   },
   "main": "dist/jss-vendor-prefixer.js",
   "devDependencies": {
-    "jsstyles": "^2.3.0"
+    "jsstyles": "^2.3.2"
   }
 }
