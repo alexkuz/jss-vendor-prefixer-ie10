@@ -47,16 +47,10 @@ console.log(styleSheet.classes)
 
 ## Run tests
 
-### Locally
-
 ```bash
 npm i
-open test/index.html
+npm run test
 ```
-
-### From github
-
-[Tests](https://jsstyles.github.com/jss-vendor-prefixer/test)
 
 
 ## License
