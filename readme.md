@@ -1,38 +1,57 @@
-## Vendor prefixer plugin for JSS
+![JSS logo](http://avatars1.githubusercontent.com/u/9503099?v=3&s=60)
 
-This vendor prefixer knows which properties and values are supported in the current runtime and changes only whats required. The best thing is - you don't need to download all of them.Also it is very fast, all checks are cached. [See example.](http://jsstyles.github.io/jss-vendor-prefixer/examples/property/index.html)
+## JSS plugin that handles vendor prefixes on the browser
+
+This vendor prefixer knows which properties and values are supported in the
+current runtime and changes only whats required.
+The best thing is - you don't need to download all of them.
+Also it is very fast, all checks are cached.
+
+[Demo](http://jsstyles.github.io/jss-examples/index.html#plugin-jss-vendor-prefixer) -
+[JSS](https://github.com/jsstyles/jss)
+
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/jsstyles/jss?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+
+## Usage example
 
 ```javascript
-{
-    '.container': {
-        transform: 'translateX(100px)'
-    }
-}
+import jss from 'jss'
+import vendorPrefixer from 'jss-vendor-prefixer'
+
+jss.use(vendorPrefixer)
+
+const styleSheet = jss.createStyleSheet({
+  container: {
+    transform: 'translateX(100px)'
+  }
+})
+```
+
+```javascript
+console.log(styleSheet.toString())
 ```
 ```css
-.container {
-    transform: -webkit-translateX(100px);
+.jss-0-0 {
+  transform: -webkit-translateX(100px);
 }
 ```
 
-## Register plugin
-
 ```javascript
-var jss = require('jss')
-var vendorPrefixer = require('jss-vendor-prefixer')
-jss.use(vendorPrefixer)
+console.log(styleSheet.classes)
 ```
+```javascript
+{ container: "jss-0-0" }
+```
+
 
 ## Run tests
 
-### Locally
 ```bash
 npm i
-open test/local.html
+npm run test
 ```
-### From github
 
-[Tests](https://jsstyles.github.com/jss-vendor-prefixer/test)
 
 ## License
 
