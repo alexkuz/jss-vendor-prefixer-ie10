@@ -1,3 +1,8 @@
+## 1.0.0 / 2015-10-19
+
+- support jss 3.0
+- now plugin needs to be called like a middleware
+
 ## 0.3.0 / 2015-09-21
 
 - migrate to es6

@@ -2,7 +2,7 @@
 
 QUnit.module('Vendor prefixes plugin', {
   setup: function () {
-    jss.use(jssVendorPrefixer)
+    jss.use(jssVendorPrefixer())
   },
   teardown: function () {
     jss.plugins.registry = []

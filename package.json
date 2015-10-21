@@ -1,7 +1,7 @@
 {
   "name": "jss-vendor-prefixer",
   "description": "JSS plugin that handles vendor prefixes on the browser",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "author": {
     "name": "Oleg Slobodskoi",
     "email": "oleg008@gmail.com"
@@ -30,7 +30,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "css-vendor": "^0.2.0"
+    "css-vendor": "^0.3.1"
   },
   "main": "./lib/index.js",
   "devDependencies": {
@@ -42,13 +42,13 @@
     "eslint-config-airbnb": "^0.0.6",
     "eslint-config-jss": "^0.1.0",
     "eslint-plugin-react": "^2.7.0",
-    "jss": "^2.3.4",
+    "jss": ">=3.0.0 < 4.0.0",
     "opener": "^1.4.1",
     "qunitjs": "1.15.0",
     "rimraf": "^2.4.3",
     "webpack": "^1.11.0"
   },
   "peerDependencies": {
-    "jss": "^2.3.4"
+    "jss": ">=3.0.0 < 4.0.0"
   }
 }

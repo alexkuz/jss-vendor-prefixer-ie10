@@ -19,9 +19,9 @@ Also it is very fast, all checks are cached.
 import jss from 'jss'
 import vendorPrefixer from 'jss-vendor-prefixer'
 
-jss.use(vendorPrefixer)
+jss.use(vendorPrefixer())
 
-const styleSheet = jss.createStyleSheet({
+let sheet = jss.createStyleSheet({
   container: {
     transform: 'translateX(100px)'
   }
@@ -44,14 +44,12 @@ console.log(styleSheet.classes)
 { container: "jss-0-0" }
 ```
 
-
 ## Run tests
 
 ```bash
 npm i
 npm run test
 ```
-
 
 ## License
 
