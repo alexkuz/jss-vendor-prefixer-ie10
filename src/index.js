@@ -36,7 +36,7 @@ export default function jssVendorPrefixerIE10() {
       const changeValue = ieValueMap[value]
 
       if (changeValue) {
-        rule.style[prop] = value
+        rule.style[prop] = changeValue
       }
 
       if (changeProp) {
