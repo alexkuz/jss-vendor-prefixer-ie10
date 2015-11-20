@@ -16,7 +16,8 @@ const ieValueMap = {
   'flex': '-ms-flexbox',
   'inline-flex': '-ms-inline-flexbox',
   'flex-start': 'start',
-  'flex-end': 'end'
+  'flex-end': 'end',
+  'space-between': 'justify'
 }
 
 /**
