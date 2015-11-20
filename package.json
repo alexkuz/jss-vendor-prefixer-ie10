@@ -1,7 +1,7 @@
 {
   "name": "jss-vendor-prefixer-ie10",
   "description": "JSS plugin that handles vendor prefixes on older IE browsers",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "alexkuz",
     "email": "alexkuz@gmail.com"
