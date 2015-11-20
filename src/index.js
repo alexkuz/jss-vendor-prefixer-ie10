@@ -1,4 +1,23 @@
-import * as vendor from 'css-vendor'
+import isIE from './isIE'
+
+const iePropMap = {
+  'flex-grow': '-ms-flex-positive',
+  'flex-shrink': '-ms-flex-negative',
+  'flex-basis': '-ms-flex-preferred-size',
+  'align-items': '-ms-flex-align',
+  'flex-wrap': '-ms-flex-wrap',
+  'order': '-ms-flex-order',
+  'justify-content': '-ms-flex-pack',
+  'align-self': '-ms-flex-item-align',
+  'align-content': '-ms-flex-line-pack'
+}
+
+const ieValueMap = {
+  'flex': '-ms-flexbox',
+  'inline-flex': '-ms-inline-flexbox',
+  'flex-start': 'start',
+  'flex-end': 'end'
+}
 
 /**
  * Add vendor prefix to a property name when needed.
@@ -6,29 +25,22 @@ import * as vendor from 'css-vendor'
  * @param {Rule} rule
  * @api public
  */
-export default function jssVendorPrefixer() {
+export default function jssVendorPrefixerIE10() {
   return rule => {
-    if (rule.type === 'keyframe') {
-      rule.selector = `@${vendor.prefix.css}keyframes${rule.selector.substr(10)}`
-      return
-    }
-
-    if (rule.type !== 'regular') return
+    if (!isIE() || rule.type !== 'regular') return
 
     for (let prop in rule.style) {
       const value = rule.style[prop]
+      const changeProp = iePropMap[prop]
+      const changeValue = ieValueMap[value]
 
-      let changeProp = false
-      const supportedProp = vendor.supportedProperty(prop)
-      if (supportedProp && supportedProp !== prop) changeProp = true
+      if (changeValue) {
+        rule.style[prop] = value
+      }
 
-      let changeValue = false
-      const supportedValue = vendor.supportedValue(supportedProp, value)
-      if (supportedValue && supportedValue !== value) changeValue = true
-
-      if (changeProp || changeValue) {
-        if (changeProp) delete rule.style[prop]
-        rule.style[supportedProp] = supportedValue
+      if (changeProp) {
+        rule.style[changeProp] = rule.style[prop]
+        delete rule.style[prop]
       }
     }
   }

@@ -16,7 +16,7 @@ if (process.env.NODE_ENV === 'production') {
 
 module.exports = {
   output: {
-    library: 'jssVendorPrefixer',
+    library: 'jssVendorPrefixerIE10',
     libraryTarget: 'umd'
   },
   plugins: plugins,

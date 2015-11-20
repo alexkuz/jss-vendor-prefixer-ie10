@@ -1,43 +1,29 @@
 'use strict'
 
+function isIE() {
+  return /msie (8|9|10)/i.test(window.navigator.userAgent)
+}
+
 QUnit.module('Vendor prefixes plugin', {
   setup: function () {
-    jss.use(jssVendorPrefixer())
+    jss.use(jssVendorPrefixerIE10())
   },
   teardown: function () {
     jss.plugins.registry = []
   }
 })
 
-test('prefixed property', function () {
+test('prefixed ie property', function () {
   var ss = jss.createStyleSheet({
-    a: {animation: 'yyy'}
+    a: {'justify-content': 'center'}
   }, {named: false})
-  var prefixedProp = cssVendor.prefix.css + 'animation'
 
-  equal(ss.toString(), 'a {\n  ' + prefixedProp + ': yyy;\n}')
+  equal(ss.toString(), isIE() ? 'a {\n  -ms-flex-pack: center;\n}' : 'a {\n  justify-content: center;\n}')
 })
 
-test('@keyframes', function () {
+test('prefixed ie value', function () {
   var ss = jss.createStyleSheet({
-    '@keyframes a': {}
+    a: {display: 'inline-flex'}
   }, {named: false})
-  var prefixedKeyframes = '@' + cssVendor.prefix.css + 'keyframes'
-
-  equal(ss.toString(), prefixedKeyframes + ' a {\n}')
-})
-
-test('unknown property', function () {
-  var ss = jss.createStyleSheet({
-    a: {xxx: 'yyy'}
-  }, {named: false})
-  equal(ss.toString(), 'a {\n  xxx: yyy;\n}')
-})
-
-test('prefixed value', function () {
-  var ss = jss.createStyleSheet({
-    a: {display: 'flex'}
-  }, {named: false})
-  var supportedValue = cssVendor.supportedValue('display', 'flex')
-  equal(ss.toString(), 'a {\n  display: ' + supportedValue + ';\n}', supportedValue)
+  equal(ss.toString(), isIE() ? 'a {\n  display: -ms-inline-flexbox;\n}' : 'a {\n  display: inline-flex;\n}')
 })
